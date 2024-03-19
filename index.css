@@ -1,20 +1,3 @@
-:root {
-    --spacing-sm: .6rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 2rem;
-    --spacing-xlg: 4rem;
-    --text: {color:text};
-    --links: {color:links};
-    --links-hover: {color:hover};
-    --posts: {color:posts};
-    --borders: {text:border} {color:border};
-    --accent: {color:accent};
-    --accent-text: {color:accent text};
-    --accent-links: {color:accent links};
-    --accent-hover: {color:accent hover};
-    --accent-borders: {text:accent border} {color:accent border};
-}
-
 /* tumblr default interaction buttons */
 .tmblr-iframe { margin-top: 10px; }
         
