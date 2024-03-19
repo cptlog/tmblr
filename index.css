@@ -52,12 +52,13 @@ ul { list-style-type: square; }
     z-index: 1;
     position: sticky;
     top: 0;
+    align-items: baseline;
     background: var(--posts);
     border-bottom: var(--border);
 }
 
 .top aside, .top .navigation {
-    height: 80px;
+    height: 90px;
 }
 
 .blogtitle {
@@ -100,7 +101,7 @@ aside {
     height: 100vh;
     align-content: center;
     position: sticky;
-    top: 80px;
+    top: 90px;
 }
 
 aside header {
