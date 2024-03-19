@@ -1,0 +1,318 @@
+:root {
+    --spacing-sm: .6rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xlg: 4rem;
+    --text: {color:text};
+    --links: {color:links};
+    --links-hover: {color:hover};
+    --posts: {color:posts};
+    --borders: {text:border} {color:border};
+    --accent: {color:accent};
+    --accent-text: {color:accent text};
+    --accent-links: {color:accent links};
+    --accent-hover: {color:accent hover};
+    --accent-borders: {text:accent border} {color:accent border};
+}
+
+/* tumblr default interaction buttons */
+.tmblr-iframe { margin-top: 10px; }
+        
+* {
+    box-sizing: border-box;
+    border-radius: 0!important;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+     background-color: {color:background};
+     background-image: url({image:background});
+     {block:iffullbackground}
+     background-size: cover;
+     {/block:iffullbackground}
+     background-attachment: fixed;
+     font-family: arial;
+     color: var(--text);
+     word-wrap: break-word;
+     line-height: 2rem;
+     font-size: 17px;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba({RGBcolor:overlay}, 0.6);
+    z-index: -1;
+}
+
+a { text-decoration: none; color: var(--links); }
+a:hover { color: var(--links-hover); }
+
+ul { list-style-type: square; }
+
+ .flex {
+     display: flex;
+     flex-wrap: wrap;
+}
+
+ .centered {
+     align-items: center;
+     justify-content: center;
+}
+
+/* top bar */
+.top {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    background: var(--posts);
+    border-bottom: var(--borders);
+}
+
+.top aside, .top .navigation {
+    height: 80px;
+}
+
+.blogtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.blogtitle a {
+    color: {color:title};
+    text-shadow:
+    -1.3px -1.3px 0 {color:title border},
+     0   -1.3px 0 {color:title border},
+     1.3px -1.3px 0 {color:title border},
+     1.3px  0   0 {color:title border},
+     1.3px  1.3px 0 {color:title border},
+     0    1.3px 0 {color:title border},
+    -1.3px  1.3px 0 {color:title border},
+    -1.3px  0   0 {color:title border};
+}
+
+.blogtitle a:hover {
+    color: {color:title hover};
+    text-shadow:
+    -1.3px -1.3px 0 {color:title hover border},
+     0   -1.3px 0 {color:title hover border},
+     1.3px -1.3px 0 {color:title hover border},
+     1.3px  0   0 {color:title hover border},
+     1.3px  1.3px 0 {color:title hover border},
+     0    1.3px 0 {color:title hover border},
+    -1.3px  1.3px 0 {color:title hover border},
+    -1.3px  0   0 {color:title hover border};
+}
+
+.navigation {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navigation > div {
+    padding: 0 10px;
+}
+
+.pagination {
+     margin: 0 var(--spacing-xlg);
+     font-size: 1.5em;
+}
+
+/* main container */
+main, .top .main {
+    width: 100%;
+    margin: auto;
+    max-width: 1230px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+/* post container */
+section {
+    width:calc(100% - 400px);
+}
+
+/* left sidebar */
+aside {
+    width: 300px;
+    height: 100vh;
+    align-content: center;
+    position: sticky;
+    top: 80px;
+}
+
+aside header {
+    width: 300px;
+    border-bottom: var(--borders);
+}
+
+aside header img { height: {text:icon height}; }
+
+.sidebar {
+    align-self: flex-start;
+    overflow: hidden;
+    background: var(--posts);
+    color: var(--text);
+    border: var(--borders);
+    margin: var(--spacing-xlg) auto;
+}
+
+.description {
+    padding: var(--spacing-md);
+    background: var(--accent);
+    border: var(--accent-borders);
+}
+
+/* posts */
+ article {
+     background: var(--posts);
+     max-width: 740px;
+     width: 90%;
+     border: var(--borders);
+     margin: var(--spacing-xlg) auto;
+}
+
+ article img {
+     max-width: 100%;
+     display: block;
+     margin: auto;
+}
+
+article iframe {
+    max-width: 100%!important;
+}
+
+/* post permalink & tags */
+.info { 
+    background: var(--accent);
+    color: var(--accent-text);
+    padding: var(--spacing-md);
+    border: var(--accent-borders);
+}
+
+.info a { color: var(--accent-links); }
+.info a:hover { color: var(--accent-hover); }
+
+.permabtn .bi { margin-right: calc(var(--spacing-sm) / 3); }
+.permabtn a:hover .bi { color: var(--accent-links); }
+
+.info .permabtn, .info .reblogparent { flex-grow: 2; }
+
+.tag { margin-left: calc(var(--spacing-sm) / 3); }
+
+/* even post padding */
+.reblog-header {
+    margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
+}
+
+.original-post {
+    margin-top: var(--spacing-sm);
+}
+
+.caption {
+    padding: 0 var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+}
+
+/* post contents */
+.tumblr_audio_player {
+    width: 100%;
+}
+
+.link {
+    padding: var(--spacing-sm);
+}
+
+.question {
+    border: var(--borders);
+    padding: var(--spacing-sm);
+    margin: var(--spacing-sm);
+}
+
+.answer-post .replies {
+    padding: var(--spacing-sm);
+}
+
+blockquote {
+    border-left: 2px solid {color:border};
+    padding-left: var(--spacing-sm);
+    margin: 0 0 0 var(--spacing-md);
+}
+
+ul, ol {
+    padding-left: var(--spacing-lg);
+}
+
+hr { margin: var(--spacing-sm) 0; }
+
+.caption:empty { display: none; }
+p:empty { display:none; }
+
+ol.notes li { padding: 10px; }
+ol.notes img { display: none; }
+
+
+/* ABOUT page */
+.caption:has(.abtcontainer), .original-post:has(.abtcontainer) { 
+    margin: 0;
+    padding: 0;
+}
+
+.abtcontainer {
+    border: var(--accent-borders);
+}
+
+.abt .info {
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.abt .caption {
+    overflow: hidden;
+    padding-top: var(--spacing-sm);
+    border: var(--borders);
+}
+
+.abt .caption:not:last-of-type {
+    border-top: none;
+}
+
+.contact a {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-links);
+    margin: var(--spacing-sm) calc(var(--spacing-sm) / 2);
+    padding: 0 var(--spacing-sm);
+}
+
+.contact a:hover {
+    color: var(--accent-hover);
+}
+
+
+/* responsive */
+@media only screen and (max-width: 1050px) {
+     section { width: 100%; }
+     article { margin: 100px auto; }
+     aside, .top aside { display: none; }
+    .pagination { margin: 0; }
+    .mobilecolumn { flex-direction: column; }
+    .mobilecolumn > div {
+        width: 100%!important;
+        border: none!important;
+        padding: 0!important;
+    }
+    .abt .caption { border: none; }
+}
+
+@media only screen and (max-width: 1200px) {
+    .tmblr-iframe { display: none; }
+}
+
+{CustomCSS}
