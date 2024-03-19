@@ -17,7 +17,7 @@ body {
      color: var(--text);
      word-wrap: break-word;
      line-height: 2rem;
-     font-size: 17px;
+     font-size: 1em;
 }
 
 #overlay {
@@ -53,8 +53,7 @@ ul { list-style-type: square; }
     position: sticky;
     top: 0;
     align-items: baseline;
-    background: var(--posts);
-    border-bottom: var(--border);
+    background: var(--accent);
 }
 
 .top aside, .top .navigation {
