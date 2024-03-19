@@ -233,10 +233,6 @@ ol.notes img { display: none; }
     padding-top: var(--spacing-sm);
 }
 
-.abt .caption:last-of-type {
-    border-top: var(--border);
-}
-
 .contact a {
     display: inline-block;
     background: var(--accent);
