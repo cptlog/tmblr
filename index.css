@@ -231,11 +231,10 @@ ol.notes img { display: none; }
 .abt .caption {
     overflow: hidden;
     padding-top: var(--spacing-sm);
-    border: var(--border);
 }
 
-.abt .caption:not:last-of-type {
-    border-top: none;
+.abt .caption:last-of-type {
+    border-top: var(--border);
 }
 
 .contact a {
