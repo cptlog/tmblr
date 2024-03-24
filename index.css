@@ -37,12 +37,12 @@ a:hover { color: var(--links-hover); }
 
 ul { list-style-type: square; }
 
- .flex {
+.flex {
      display: flex;
      flex-wrap: wrap;
 }
 
- .centered {
+.centered {
      align-items: center;
      justify-content: center;
 }
@@ -53,6 +53,7 @@ ul { list-style-type: square; }
     position: sticky;
     top: 0;
     align-items: baseline;
+    padding: 10px;
     background: var(--accent);
 }
 
@@ -91,7 +92,7 @@ main, .top .main {
 
 /* post container */
 section {
-    width:calc(100% - 400px);
+    width: calc(100% - 400px);
 }
 
 /* left sidebar */
@@ -100,12 +101,12 @@ aside {
     height: 100vh;
     align-content: center;
     position: sticky;
-    top: 90px;
+    top: 110px;
 }
 
 aside header {
-    width: 300px;
-    border-bottom: var(--border);
+    width: 100%;
+    overflow: hidden;
 }
 
 aside header img { height: var(--icon-height); }
@@ -115,33 +116,40 @@ aside header img { height: var(--icon-height); }
     overflow: hidden;
     background: var(--posts);
     color: var(--text);
-    border: var(--border);
     margin: var(--spacing-xlg) auto;
+    border: var(--outer-border);
 }
 
 .description {
     padding: var(--spacing-md);
     background: var(--accent);
-    border: var(--accent-border);
 }
 
 /* posts */
- article {
+article {
      background: var(--posts);
-     max-width: 740px;
+     max-width: 720px;
      width: 90%;
-     border: var(--border);
      margin: var(--spacing-xlg) auto;
+     border: var(--outer-border);
 }
 
- article img {
+article img {
      max-width: 100%;
      display: block;
      margin: auto;
 }
 
 article iframe {
-    max-width: 100%!important;
+    max-width: 100%;
+}
+
+.inner {
+    border: var(--inner-border);
+}
+
+.outer {
+    border: var(--outer-border);
 }
 
 /* post permalink & tags */
@@ -149,7 +157,6 @@ article iframe {
     background: var(--accent);
     color: var(--accent-text);
     padding: var(--spacing-md);
-    border: var(--accent-border);
 }
 
 .info a { color: var(--accent-links); }
@@ -162,17 +169,8 @@ article iframe {
 
 .tag { margin-left: calc(var(--spacing-sm) / 3); }
 
-/* even post padding */
-.reblog-header {
-    margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
-}
-
-.original-post {
-    margin-top: var(--spacing-sm);
-}
-
 .caption {
-    padding: 0 var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+    padding: var(--spacing-sm);
 }
 
 /* post contents */
@@ -185,7 +183,6 @@ article iframe {
 }
 
 .question {
-    border: var(--border);
     padding: var(--spacing-sm);
     margin: var(--spacing-sm);
 }
@@ -195,14 +192,12 @@ article iframe {
 }
 
 blockquote {
-    border-left: var(--border);
+    border-left: var(--outer-border);
     padding-left: var(--spacing-sm);
     margin: 0 0 0 var(--spacing-md);
 }
 
-ul, ol {
-    padding-left: var(--spacing-lg);
-}
+ul, ol { padding-left: var(--spacing-lg); }
 
 hr { margin: var(--spacing-sm) 0; }
 
@@ -213,52 +208,12 @@ ol.notes li { padding: 10px; }
 ol.notes img { display: none; }
 
 
-/* ABOUT page */
-.caption:has(.abtcontainer), .original-post:has(.abtcontainer) { 
-    margin: 0;
-    padding: 0;
-}
-
-.abtcontainer {
-    border: var(--accent-border);
-}
-
-.abt .info {
-    border: none;
-    padding: var(--spacing-sm) var(--spacing-md);
-}
-
-.abt .caption {
-    overflow: hidden;
-    padding-top: var(--spacing-sm);
-}
-
-.contact a {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--accent-links);
-    margin: var(--spacing-sm) calc(var(--spacing-sm) / 2);
-    padding: 0 var(--spacing-sm);
-}
-
-.contact a:hover {
-    color: var(--accent-hover);
-}
-
-
 /* responsive */
 @media only screen and (max-width: 1050px) {
      section { width: 100%; }
      article { margin: 100px auto; }
      aside, .top aside { display: none; }
     .pagination { margin: 0; }
-    .mobilecolumn { flex-direction: column; }
-    .mobilecolumn > div {
-        width: 100%!important;
-        border: none!important;
-        padding: 0!important;
-    }
-    .abt .caption { border: none; }
 }
 
 @media only screen and (max-width: 1200px) {
