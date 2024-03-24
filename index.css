@@ -140,9 +140,9 @@ aside header img { height: var(--icon-height); }
      margin: auto;
 }
 
-article iframe {
+/*article iframe {
     max-width: 100%!important;
-}
+}*/
 
 /* post permalink & tags */
 .info { 
